@@ -1,5 +1,7 @@
 # OpenAI Playground
 
+This is contents for the Generative AI Workshop
+
 ## Install
 
 1. Install [asdf](https://asdf-vm.com/guide/getting-started.html)
@@ -26,3 +28,4 @@ node gettingStarted.js
 
 1. `gettingStarted.js`
 1. `streamingResponse.js`
+1. `weatherBot.js`
