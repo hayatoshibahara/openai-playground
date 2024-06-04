@@ -29,3 +29,4 @@ node gettingStarted.js
 1. `gettingStarted.js`
 1. `streamingResponse.js`
 1. `weatherBot.js`
+1. `tokenCounter.js`

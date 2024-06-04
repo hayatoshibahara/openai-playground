@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "js-tiktoken": "^1.0.12",
     "openai": "^4.42.0"
   },
   "scripts": {
