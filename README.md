@@ -21,3 +21,8 @@ export OPENAI_API_KEY="<YOUR API KEY>"
 ```sh
 node gettingStarted.js
 ```
+
+## Scripts
+
+1. `gettingStarted.js`
+1. `streamingResponse.js`
