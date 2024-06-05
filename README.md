@@ -31,5 +31,6 @@ node gettingStarted.js
 1. `weatherBot.js` 関数呼び出し機能を使った対話
 1. `tokenCounter.js` トークン数の出力
 1. `gpt4o-image-processing.js` 数学の画像を解かせる対話
-1. `text-to-speech.js` テキストを音声に変換
-1. `speech-to-text.js` 音声をテキストに変換
+1. `text-to-speech.js` 日本語テキストを日本語音声に変換
+1. `speech-to-text.js` 日本語音声をテキストに変換
+1. `translation.js` 日本語音声を英語テキストに変換

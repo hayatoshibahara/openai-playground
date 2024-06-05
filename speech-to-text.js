@@ -7,6 +7,7 @@ async function main() {
   const transcription = await openai.audio.transcriptions.create({
     file: fs.createReadStream("audio/speech.mp3"),
     model: "whisper-1",
+    prompt: "福岡市, 玉砕混合, 官民一体", // 認識制度を上げるためヒントのプロンプト
   });
 
   console.log("音声からテキストに変換しました:", transcription.text);
