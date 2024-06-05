@@ -30,3 +30,4 @@ node gettingStarted.js
 1. `streamingResponse.js`
 1. `weatherBot.js`
 1. `tokenCounter.js`
+1. `gpt4o-image-processing.js`
