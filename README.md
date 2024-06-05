@@ -37,3 +37,4 @@ node gettingStarted.js
 1. `imageRecognition.js` 画像に映る建物を認識
 1. `compreImages.js` 画像に映る建物が同じかを回答
 1. `generatingImage.js` テキストからロゴ画像を出力
+1. `text-embedding.js` テキストをベクトルに変換
