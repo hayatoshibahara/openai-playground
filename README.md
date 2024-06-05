@@ -1,35 +1,35 @@
 # OpenAI Playground
 
-This is contents for the Generative AI Workshop
+生成AIワークショップ用の実装です。
 
-## Install
+## インストール
 
-1. Install [asdf](https://asdf-vm.com/guide/getting-started.html)
+1. [asdf](https://asdf-vm.com/guide/getting-started.html)のインストール
 
-2. Install NodeJS
+2. NodeJSのインストール
 
 ```sh
 asdf install
 ```
 
-3. Set API key as environment variable
+3. 環境変数にAPIキーを設定
 
 ```sh
 export OPENAI_API_KEY="<YOUR API KEY>"
 ```
 
-## Usage Example
+## 使い方
 
 ```sh
 node gettingStarted.js
 ```
 
-## Scripts
+## スクリプト
 
-1. `gettingStarted.js`
-1. `streamingResponse.js`
-1. `weatherBot.js`
-1. `tokenCounter.js`
-1. `gpt4o-image-processing.js`
-1. `text-to-speech.js`
-1. `speech-to-text.js`
+1. `gettingStarted.js` GPT-4oを使った対話
+1. `streamingResponse.js` ストリーミングAPIを使った対話
+1. `weatherBot.js` 関数呼び出し機能を使った対話
+1. `tokenCounter.js` トークン数の出力
+1. `gpt4o-image-processing.js` 数学の画像を解かせる対話
+1. `text-to-speech.js` テキストを音声に変換
+1. `speech-to-text.js` 音声をテキストに変換
