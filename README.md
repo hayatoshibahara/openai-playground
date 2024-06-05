@@ -39,3 +39,4 @@ node gettingStarted.js
 1. `generatingImage.js` テキストからロゴ画像を出力
 1. `text-embedding.js` テキストをベクトルに変換
 1. `moderation.js` 悪意のある入力であるかを判定
+1. `assistant.js` 数学の先生が数学の問題に答える対話
