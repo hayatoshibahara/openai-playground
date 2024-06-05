@@ -34,3 +34,5 @@ node gettingStarted.js
 1. `textToSpeech.js` 日本語テキストを日本語音声に変換
 1. `speechToText.js` 日本語音声をテキストに変換
 1. `translation.js` 日本語音声を英語テキストに変換
+1. `imageRecognition.js` 画像に映る建物を認識
+1. `compreImages.js` 画像に映る建物が同じかを回答
