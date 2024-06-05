@@ -38,3 +38,4 @@ node gettingStarted.js
 1. `compreImages.js` 画像に映る建物が同じかを回答
 1. `generatingImage.js` テキストからロゴ画像を出力
 1. `text-embedding.js` テキストをベクトルに変換
+1. `moderation.js` 悪意のある入力であるかを判定
