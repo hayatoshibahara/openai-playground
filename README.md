@@ -31,3 +31,5 @@ node gettingStarted.js
 1. `weatherBot.js`
 1. `tokenCounter.js`
 1. `gpt4o-image-processing.js`
+1. `text-to-speech.js`
+1. `speech-to-text.js`
