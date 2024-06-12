@@ -40,4 +40,5 @@ node gettingStarted.js
 1. `text-embedding.js` テキストをベクトルに変換
 1. `moderation.js` 悪意のある入力であるかを判定
 1. `assistant.js` 数学の先生が数学の問題に答える対話
-1. `assistantWithStreaming.js` ストリーミング出力版
+1. `assistantWithStreaming.js` assistant.jsのストリーミング出力版
+1. `createFineTuningJob.js` CSVデータを使ったファインチューニング
