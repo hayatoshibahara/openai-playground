@@ -95,8 +95,6 @@ async function main() {
   fs.writeFileSync(trainingDataPath, training_jsonl);
   fs.writeFileSync(validationDataPath, validation_jsonl);
 
-  const trainingData = fs.readFileSync(trainingDataPath, "utf-8");
-
   const uploadTrainingDataResponse = await openai.files.create({
     file: fs.createReadStream(trainingDataPath),
     purpose: "fine-tune",
@@ -119,6 +117,8 @@ async function main() {
 
   // ファインチューニングは数分〜数時間かかる
   // 失敗・完了したらメールが届く
+  // ChatCompletions でモデルにファインチューニングしたモデルを指定し、推論できます
+
   setInterval(async () => {
     await checkJobStatus(jobId);
   }, 10000);
