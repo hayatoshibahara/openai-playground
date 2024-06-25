@@ -42,3 +42,4 @@ node gettingStarted.js
 1. `assistant.js` 数学の先生が数学の問題に答える対話
 1. `assistantWithStreaming.js` assistant.jsのストリーミング出力版
 1. `createFineTuningJob.js` CSVデータを使ったファインチューニング
+1. `fileSeach.js` ウェブサイトをプリントしたPDFを読み回答
