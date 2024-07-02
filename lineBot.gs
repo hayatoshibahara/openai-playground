@@ -38,7 +38,7 @@ function doPost(e) {
     const userId = json.events[0].source.userId;
     const userMessage = json.events[0].message.text;
 
-    // LINEのメッセージをログに記録
+    // デバッグ用にLINEのメッセージをログに記録
     logToSheet("C", JSON.stringify(json));
 
     // ユーザーの入力をログに記録
@@ -48,7 +48,11 @@ function doPost(e) {
     displayLoadingAnimation(userId, 10);
 
     const roleSetting =
-      "あなたは数学の先生です。小学生にもわかるように説明してください。";
+      "あなたは管理栄養士です。ユーザの健康を第一優先に考えます。" +
+      "まずユーザの家族構成や好きな食べ物などを聞いてください。" +
+      "ユーザの入力に対して主食・副菜・主菜を提案してください。" +
+      "主食・副菜・主菜を作るのに必要な食材も回答に含めてください。";
+
     // チャットの履歴をスプレッドシートから取得
     const chatLogs = getChatLogs("A");
     const assistantMessage = chatCompletions(
@@ -117,6 +121,51 @@ function pushMessage(
         {
           type: "text",
           text,
+        },
+      ],
+    }),
+  });
+}
+
+/*
+LINEのテンプレートメッセージをプッシュする関数です。
+*/
+// function pushTemplateMessage(userId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") {
+function pushMainFoodQuestion(userId = "U943ba53d46066f3542f9a586870bea5c") {
+  return UrlFetchApp.fetch("https://api.line.me/v2/bot/message/push", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + CHANNEL_ACCESS_TOKEN,
+    },
+    payload: JSON.stringify({
+      to: userId,
+      messages: [
+        {
+          type: "template",
+          altText: "This is an alt text",
+          template: {
+            type: "buttons",
+            title: "メニュー",
+            text: "今の気分を入力してください",
+            actions: [
+              {
+                type: "message",
+                label: "肉をたべたい",
+                text: "主食は肉",
+              },
+              {
+                type: "message",
+                label: "魚をたべたい",
+                text: "主食は魚",
+              },
+              {
+                type: "message",
+                label: "ラーメンをたべたい",
+                text: "主食はラーメン",
+              },
+            ],
+          },
         },
       ],
     }),
@@ -262,4 +311,29 @@ function getChatLogs(column = "A") {
   if (flattend.length > 10) flattened = flattend.slice(-10);
   flattend = flattend.map((logString) => JSON.parse(logString));
   return flattend;
+}
+
+/* 特定の列の値をクリアする関数です。
+ */
+function clearLogs(column = "A") {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+  sheet.getRange(column + "1:" + column + "1000").clearContent();
+  return;
+}
+
+/* 特定の文字列を含むセルを取得する関数です。
+ */
+function findCellWithText(column = "A", text = "主食") {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+  const range = sheet.getRange(column + "1:" + column + "1000");
+  let cell;
+
+  range.getValues().forEach((row, i) => {
+    row.forEach((value, j) => {
+      if (value.includes(text)) {
+        cell = sheet.getRange(i + 1, j + 1);
+      }
+    });
+  });
+  return cell.getValue();
 }
