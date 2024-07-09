@@ -34,12 +34,31 @@ if (!MODEL_ID) {
 function doPost(e) {
   try {
     const json = JSON.parse(e.postData.contents);
-    const replyToken = json.events[0].replyToken;
-    const userId = json.events[0].source.userId;
-    const userMessage = json.events[0].message.text;
 
     // デバッグ用にLINEのメッセージをログに記録
     logToSheet("C", JSON.stringify(json));
+
+    const replyToken = json.events[0].replyToken;
+
+    // フォローされたときの自動応答
+    // https://manager.line.biz の 設定 > 応答設定 で自動応答をオフにしてください。
+    if (json.events[0].type === "follow") {
+      const firstMessage =
+        "こんにちは！私は管理栄養士です。好きな食べ物について教えてください。";
+      replyMessage(replyToken, firstMessage);
+      // アシスタントの出力をログに記録
+      logToSheet(
+        "A",
+        JSON.stringify({ role: "assistant", content: firstMessage })
+      );
+
+      return ContentService.createTextOutput(
+        JSON.stringify({ content: "post ok" })
+      ).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    const userId = json.events[0].source.userId;
+    const userMessage = json.events[0].message.text;
 
     // ユーザーの入力をログに記録
     logToSheet("A", JSON.stringify({ role: "user", content: userMessage }));
