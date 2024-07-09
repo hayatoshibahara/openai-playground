@@ -1,4 +1,4 @@
-// CSV をダウンロードし、 data ディレクトリに保存してください。
+// レシピのデータセット
 // https://github.com/openai/openai-cookbook/blob/main/examples/data/cookbook_recipes_nlg_10k.csv
 
 import fs from "fs";

@@ -44,3 +44,4 @@ node gettingStarted.js
 1. `createFineTuningJob.js` CSVデータを使ったファインチューニング
 1. `fileSeach.js` ウェブサイトをプリントしたPDFを読み回答
 1. `lineBot.gs` ユーザの入力を記憶し、返答するLINEボット
+1. `ojousamaBot.js` お嬢様の対話データを使ったファインチューニング
