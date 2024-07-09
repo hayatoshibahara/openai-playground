@@ -149,8 +149,7 @@ function pushMessage(
 /*
 LINEのテンプレートメッセージをプッシュする関数です。
 */
-// function pushTemplateMessage(userId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") {
-function pushMainFoodQuestion(userId = "U943ba53d46066f3542f9a586870bea5c") {
+function pushTemplateMessage(userId = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") {
   return UrlFetchApp.fetch("https://api.line.me/v2/bot/message/push", {
     method: "post",
     headers: {
