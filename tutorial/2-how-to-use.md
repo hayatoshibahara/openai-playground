@@ -24,6 +24,8 @@ Playground が表示されるが、Docs を選択
 
 ![](image/language.png)
 
+Python の場合は後述
+
 ## Node.js の場合
 
 Node.js のインストール
@@ -96,6 +98,7 @@ echo $OPENAI_API_KEY
 ```
 
 ChatCompletions API を使ったプログラムを作成。
+
 ※ その他にもベクトル抽出（Embedding）、画像生成（Images）も試せる。
 
 ```js
@@ -120,7 +123,7 @@ main();
 
 ![](image/first-request.png)
 
-API を実行
+スクリプトを実行
 
 ```sh
 node openai-test.js
@@ -141,7 +144,7 @@ node openai-test.js
 }
 ```
 
-参考：
+### 参考
 
 ユーザの入力やボットの回答を含めて、新しい回答を作成するのが ChatCompletions API を使った開発
 
@@ -189,5 +192,66 @@ node openai-test.js
   finish_reason: 'stop'
 }
 ```
+
+## Python の場合
+
+ターミナルを開き、`python --version`で Python がインストールされているかを確認。
+
+されていなければ、Python の公式サイトより Python をインストールする。（最新のLTS版がおすすめ）
+
+![](image/install-python.png)
+
+
+```sh
+mkdir openai-example
+cd openai-example
+# OpenAI ライブラリのインストール
+pip install --upgrade openai
+```
+
+![](image/install-openai-python-library.png)
+
+```python
+# openai-test.py
+from openai import OpenAI
+client = OpenAI()
+
+completion = client.chat.completions.create(
+  model="gpt-4o-mini",
+  messages=[
+    {"role": "system", "content": "あなたは天才科学者です"},
+    {"role": "user", "content": "人類に解けない問題は？"}
+  ]
+)
+
+print(completion.choices[0].message)
+```
+
+![](image/run-python-code.png)
+
+スクリプトを実行
+
+```sh
+python openai-test.py
+```
+
+以下が表示されると成功：
+
+```sh
+ChatCompletionMessage(content='人類にとって解決が難しい問題はいくつかあります。以下にいくつかの例を挙げます。
+\n\n1. **意識の本質**: 意識とは何か、どのようにして脳が意識を生み出すのかについての理解は未だに不十分です。
+これが科学や哲学における根本的な問題の一つです。\n\n2. 
+**暗黒物質と暗黒エネルギー**: 宇宙の大部分を占めると考えられている暗黒物質や暗黒エネルギーの正体は今なお謎であり、
+解明には時間がかかるとされています。\n\n3. 
+**統一理論の未完成**: 重力、電磁気力、弱い力、強い力の4つの基本的な力を統一する理論（例えば、弦理論）には多くの課題が
+ありますが、それを完全に証明することは現時点では難しいです。\n\n4.
+**未解決の数学問題**: 「リーマン予想」や「ゴールドバッハの予想」といった未解決の数学問題は、
+多くの数学者が挑み続けている課題です。\n\n5. **気候変動の複雑性**: 地球の気候システムは非常に複雑で、
+変化のメカニズムを完全に理解することは難しいため、適切な対策を立てることも困難です。
+\n\nこれらの問題は科学、哲学、倫理などの観点からも興味深く、解決には多くの研究と時間が必要です。',
+role='assistant', function_call=None, tool_calls=None)
+```
+
+## まとめ
 
 他の簡単の実装例もこのリポジトリ内にあるので参考にしてみてください！

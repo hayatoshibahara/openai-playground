@@ -22,84 +22,91 @@ GPT-4o mini は GPT-4o の簡易版で、簡単なタスクに向いている。
 
 大規模言語モデルへのアクセスは API を介して行う。
 
-Chat Completions API
+### Chat Completions API
 
 初期からあるシンプルで使いやすい API
 
 ![](image/chat-completions-api.png)
 
-Assistants API
+### Assistants API
 
 サービス開発で一般的に使用する API。Chat Completions API よりも複雑で、色々作れる。
 
 ![](image/assistants-api.png)
 
-Batch API
+### Batch API
 
 大量の文章を API が空いている時間に一括で処理することで 50% のコスト削減が可能。
 
 ![](image/batch-api.png)
 
-Knowledge retrieval
+### Knowledge retrieval
 
 PDF などをアップロードするだけで回答してくれたり、文章をベクトル化して RAG を実装できる。
 結構使う。
 
 ![](image/knowledge-retrieval.png)
 
-Code interpreter
+### Code interpreter
 
 高度な数学の問題など Python コードをサーバ上で実行し回答できる。
 
 ![](image/code-interpreter.png)
 
-Function calling
+### Function calling
 
 自然言語の入力をもとに外部 API を呼び出し回答できる。
 
 ![](image/funcion-calling.png)
 
-Vision
+### Vision
 
 ![](image/vision.png)
 
 画像に含まれている物なのに対して回答できる。
 
-JSON Mode
+### JSON Mode
 
 Chat Completions API による回答を全て JSON で出力できる。
 
 ![](image/json-mode.png)
 
-Streaming
+### Streaming
 
 現行の ChatGPT のように回答をストリームで取得できる。
 
 ![](image/streaming.png)
 
-Fine-tuning
+### Fine-tuning
 
 モデルの知識をカスタマイズしたり、特定のタスクを解いたり振る舞いを変更できる。
 
 ![](image/fine-tuning.png)
 
+### Playground
 
-API はローカル環境で確認することも、Playground を使い OpenAI のWebサービス上でも確認できる。
+Playground を使い OpenAI のWebサービス上で API の挙動を確認できる。
 
 ![](image/playground.png)
 
-その他にも
+### DALLE-3
 
-テキストから画像を生成できる DALLE-3
+テキストから画像を生成できる。
 
 ![](image/dalle-3.png)
 
-テキストを人の声に変換する TTS （Text to Speech）
+### TTS（Text to Speech）
+
+テキストを人の声に変換できる。
 
 ![](image/tts.png)
 
-人の声をテキストに変換する Whisper 
+### Whisper
+
+人の声をテキストに変換できる。
 
 ![](image/whisper.png)
 
-WS ではこれらの API を組み合わせて面白いプロダクトを作ります。
+## まとめ
+
+ワークショップではこれらの API を組み合わせて面白いプロダクトを作ります！
