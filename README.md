@@ -2,7 +2,17 @@
 
 生成AIワークショップ用の実装です。
 
-## インストール
+## チュートリアル
+
+[1. イントロダクション](tutorial/1-introcution.md)
+
+[2. OpenAI API の使い方](tutorial/2-how-to-use.md)
+
+[3. API の利用料金](tutorial/3-pricing.md)
+
+[4. APIキーの取得方法](tutorial/4-get-api-key.md)
+
+## 環境設定
 
 1. [asdf](https://asdf-vm.com/guide/getting-started.html)のインストール
 
